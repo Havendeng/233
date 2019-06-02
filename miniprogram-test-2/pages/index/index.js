@@ -42,7 +42,7 @@ Page({
   },
   comingSoon: function () {
     wx.showToast({
-      title: '还在开发',
+      title: '还在开发当中',
       icon: 'loading',
       duration: 1000
     });

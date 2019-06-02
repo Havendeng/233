@@ -3,6 +3,9 @@
 <collectGoldCoin  id="collectGoldCoin"  coin-num="20"></collectGoldCoin>
 <view class="container" style="height:{{containerHeight}}rpx">
   <view class="gameGuideBook"  catch:tap="comingSoon"></view>
+  <view class="gameGuideBookPopup" hover-class="none" hover-stop-propagation="false">
+    
+  </view>
   <view class="gameAnnouncement"></view>
   <!-- 以下是进度条区域 -->
   <view class="gameProgressContent">
