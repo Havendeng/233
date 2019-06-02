@@ -1,0 +1,37 @@
+/* component/navbar/navbar.wxss */
+.navBar {
+  width: 100%;
+  /* height: 100rpx; */
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  /* background-color: pink; */
+  box-sizing: border-box;
+}
+.backButton{
+  position: absolute;
+  bottom: 20rpx;
+  left: 20rpx;
+  height: 67rpx;
+  width: 67rpx;
+  background-image: url("https://s2.ax1x.com/2019/06/01/V3ZPtU.png");
+  background-size:1499rpx 1289rpx;
+  background-position: -1382rpx -616rpx;
+  z-index: 11;
+  /* background-color: pink; */
+}
+ .navbarTitle {
+  width: 100%;
+  height: 46px;
+  line-height: 46px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+
+  color: #333;
+  font-size: 30rpx;
+}

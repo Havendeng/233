@@ -1,0 +1,16 @@
+<navbar showBackButton="{{true}}" page-name=""></navbar>
+<view class="container" style="height:{{containerHeight}}rpx">
+    <view class="roofTitle"></view>
+    <view class="mainView"  style="height:{{containerHeight-204}}rpx">
+        <view class="outView">
+            <view class="outScrollView">
+                <scroll-view class="prizeList" scroll-y="true" scroll-top="0" scroll-left="0" scroll-into-view=""
+                    scroll-with-animation="false" enable-back-to-top="true" bindscrolltoupper="" bindscrolltolower=""
+                    bindscroll="">
+                        <view class="prizeItem"  wx:for="{{prizeList}}" wx:key="id">{{item.name}}</view>
+                </scroll-view>
+            </view>
+        </view>
+        <view class="infoView"></view>
+    </view>
+</view>

@@ -1,0 +1,92 @@
+.container {
+  background-image: url("https://s2.ax1x.com/2019/05/28/VnEZZj.png");
+  height: 100%;
+  overflow: hidden;
+  width: 750rpx;
+  background-size: 750rpx 1624rpx;
+}
+
+.roofTitle
+ {
+  position: absolute;
+  top: 50rpx;
+  height: 240rpx;
+  width: 750rpx;
+  background-image: url("https://s2.ax1x.com/2019/05/31/Vlnpmq.png");
+  background-size: 770rpx 610rpx;
+  background-position: -10rpx -10rpx;
+  z-index: 2;
+  /* box-shadow: 0rpx 17rpx 59rpx 0rpx rgba(64, 27, 5, 0.9); */
+}
+
+.mainView {
+  height: 100%;
+  width: 750rpx;
+  position: absolute;
+  top: 204rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+}
+
+.outView {
+  flex-shrink: 1;
+  width: 750rpx;
+  height: 960rpx;
+  background: radial-gradient(circle, rgba(145, 77, 36, 1), rgba(135, 63, 20, 1));
+  box-shadow: 0rpx 2rpx 3rpx 0rpx rgba(255, 217, 195, 0.5) inset;
+  border-radius: 10rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items:center;
+  flex-grow: 1;
+  flex-direction:column;
+}
+
+.outScrollView {
+  position: relative;
+  bottom: 14rpx;
+  width: 724rpx;
+  height: 945rpx;
+  background: linear-gradient(0deg, #7a4729, #7a4729);
+  box-shadow: 0rpx 17rpx 59rpx 0rpx rgba(64, 27, 5, 0.9) inset;
+  border-radius: 10rpx;
+  align-items:center;
+  flex-grow: 1;
+  flex-direction:column;
+  display: flex;
+  padding-top: 70rpx;
+  box-sizing: border-box;
+}
+.prizeList{
+  /* background-color: #fff; */
+  position: relative;
+  /* top: 50rpx; */
+  bottom: 14rpx;
+  width: 700rpx;
+  height: 800rpx;
+  flex-grow: 1;
+}
+.prizeItem{
+  /* background-color: rgb(194, 143, 147); */
+  /* border:2rpx solid aliceblue; */
+  box-sizing: border-box;
+  width: 100%;
+  height: 300rpx;
+  background-image: url("https://s2.ax1x.com/2019/06/01/V1wGq0.png");
+  background-size: 700rpx 300rpx;
+}
+.goodsBoard{
+  position: absolute;
+  top: 70rpx;
+  height: 150rpx;
+  width: 750rpx;
+
+  background-position: -40rpx -270rpx;
+}
+.infoView {
+  background:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5));
+  z-index: 5;
+  width: 750rpx;
+  flex-basis:120rpx;
+}

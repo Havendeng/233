@@ -1,0 +1,17 @@
+<block  wx:if="{{goldCoinFall}}">
+        <view class="maskview" bind:tap="closeGoldCoinAnimat" ></view>
+        <view class="{{animateViewScale?'animateView animateViewScale':'animateView'}}">
+                <li class="coinListStyle" wx:for="{{coinList}}" wx:key=".this">
+                        <view class="{{goldCoinFall?'goldCoin goldCoinFall':'goldCoin'}}"
+                                style="animation-delay:{{index*160}}ms;z-index:{{10-index}}">{{item}}</view>
+                </li>
+                <view class="{{moneyBagWiggle?'moneyBagWiggle moneyBag':'moneyBag'}}"></view>
+                <view class="{{coinNumShow?'coinNumShow coinNumStyle':'coinNumStyle'}}">
+                        +{{coinNum}}
+                </view>
+        </view>
+        
+</block>
+
+
+                

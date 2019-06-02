@@ -1,0 +1,9 @@
+<!--component/navbar/navbar.wxml-->
+<view class="navBar" style="height:{{navH+100}}rpx;padding-top:{{navH}}rpx;'" >
+  <view class="backButton" bindtap="navBack" wx:if="{{showBackButton}}">
+
+  </view>
+  <view class="navbarTitle">
+    {{pageName}}
+  </view>
+</view>

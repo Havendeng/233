@@ -1,0 +1,202 @@
+
+.maskview {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.7;
+    position: fixed;
+    z-index: 3;
+}
+
+.animateView {
+    /* background-color: green; */
+    width: 322rpx;
+    height: 538rpx;
+    z-index: 4;
+    position: absolute;
+    margin: auto;
+    top: 0rpx;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+}
+
+.goldCoin {
+    opacity: 0;
+    /* background-color: pink; */
+    height: 120rpx;
+    width: 120rpx;
+    background-image: url(https://s2.ax1x.com/2019/05/30/VQnprt.png);
+    background-size: 473rpx 364rpx;
+    background-position: -352rpx -10rpx;    
+    position: relative;
+    left: 108rpx;
+}
+
+.coinListStyle {
+    position: absolute;
+    top: 0;
+    list-style: none;
+}
+
+.coinNumStyle {
+    font-size: 60rpx;
+    font-family: "PingFang SC";
+    color: rgb(255, 204, 109);
+    font-weight: bold;
+    height: auto;
+    width: 180rpx;
+    text-align: center;
+    position: absolute;
+    top: 147rpx;
+    bottom: 0rpx;
+    left: -10rpx;
+    right: 0rpx;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 200;
+    opacity: 0;
+}
+
+.moneyBag {
+    /* background-color: pink; */
+    height: 344rpx;
+    width: 322rpx;
+    background-image: url(https://s2.ax1x.com/2019/05/30/VQnprt.png);
+    background-size: 473rpx 364rpx;
+    background-position: -10rpx -10rpx;
+    position: relative;
+    margin-top: 120rpx;
+    top: 74rpx;
+    z-index: 20;
+}
+
+@keyframes goldCoinFall {
+    0% {
+        opacity: 0;
+        top: 0rpx;
+    }
+    1% {
+        opacity: 1;
+        top: 0rpx;
+    }
+
+    99% {
+        opacity: 1;
+        top: 223rpx;
+    }
+    100% {
+        opacity: 0;
+        top: 223rpx;
+    }
+
+}
+
+.goldCoinFall {
+    animation: goldCoinFall 0.58s cubic-bezier(1, 0, .8, 1) 0s forwards;
+}
+
+@keyframes animateviewScale {
+    0% {
+        transform: scale(1);
+    }
+
+    87% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+.animateViewScale {
+    animation: animateviewScale 1.2s cubic-bezier(0.2, 0, 0.1, 1) 0.50s forwards;
+}
+
+@keyframes moneyBagWiggle {
+    0% {
+        top: 72rpx;
+    }
+
+    8.3% {
+        top: 78rpx;
+    }
+
+    16.6% {
+        top: 72rpx;
+    }
+
+    24.9% {
+        top: 78rpx;
+    }
+
+    33.2% {
+        top: 72rpx;
+    }
+
+    41.5% {
+        top: 78rpx;
+    }
+
+    49.8% {
+        top: 72rpx;
+    }
+
+    58.1% {
+        top: 78rpx;
+    }
+
+    66.4% {
+        top: 72rpx;
+    }
+
+    74.7% {
+        top: 78rpx;
+    }
+
+    83% {
+        top: 72rpx;
+    }
+
+    91.3% {
+        top: 78rpx;
+    }
+
+    100% {
+        top: 72rpx;
+    }
+}
+
+.moneyBagWiggle {
+    animation: moneyBagWiggle 1.16s ease-in-out 0.55s forwards;
+}
+
+@keyframes coinNumShow {
+    0% {
+        opacity: 0;
+        top: 167rpx
+    }
+
+    35% {
+        opacity: 1;
+        top: 127rpx
+    }
+
+    70% {
+        opacity: 1;
+        top: 127rpx
+    }
+
+    100% {
+        opacity: 0;
+        top: 127rpx
+    }
+}
+
+.coinNumShow {
+    font-family: 'Oswald';
+    animation: coinNumShow 1s cubic-bezier(.3, 0, .7, 1) 1.7s forwards;
+}

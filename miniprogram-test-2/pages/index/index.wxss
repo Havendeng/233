@@ -1,0 +1,259 @@
+.container {
+  background-image: url("https://s2.ax1x.com/2019/05/28/VnEZZj.png");
+  height: 100%;
+  overflow: hidden;
+  width: 750rpx;
+  background-size: 750rpx 1624rpx;
+}
+button::after {
+  border: none;
+  background-color:transparent;
+}
+
+button {
+  background-color:transparent;
+  margin: 0;
+  padding: 0;
+  border:none;
+}
+button :hover {
+  background-color:transparent;
+  margin: 0;
+  padding: 0;
+  border:none;
+}
+.gameGuideBook {
+  position: absolute;
+  left: 665rpx;
+  top: 231rpx;
+  height: 77rpx;
+  width: 73rpx;
+  background-image: url("https://s2.ax1x.com/2019/06/01/V3ZPtU.png");
+  background-size: 1499rpx 1289rpx;
+  background-position: -1382rpx -519rpx;
+}
+.gameGuideBookPopup{
+
+}
+/* 以下是进度条和通知栏相关样式 */
+.gameAnnouncement {
+  position: absolute;
+  left: 177rpx;
+  top: 272rpx;
+  height: 119rpx;
+  width: 456rpx;
+  background-image: url("https://s2.ax1x.com/2019/06/01/V3ZPtU.png");
+  background-size: 1499rpx 1289rpx;
+  background-position: -352rpx -405rpx;
+}
+
+.gameProgressContent {
+  position: absolute;
+  left: 102rpx;
+  top: 306rpx;
+  height: 120rpx;
+  width: 578rpx;
+}
+
+.gameProgressBar {
+  position: relative;
+  height: 120rpx;
+  width: 548rpx;
+  background-image: url("https://s2.ax1x.com/2019/06/01/V3e1aV.png");
+  background-size: 568rpx 224rpx;
+  background-position: -10rpx -10rpx;
+}
+.barOutView {
+  /* width:200rpx; */
+  transition: all 1s;
+  min-width: 107rpx;
+  max-width:490rpx;
+  height:64rpx;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  left:51rpx;
+  top:32rpx;
+}
+.gameProgressBarStart{
+    width:70rpx;
+  height:64rpx;
+  background-image: url("https://s2.ax1x.com/2019/06/01/V3e1aV.png");
+  background-size: 568rpx 224rpx;
+  background-position: -10rpx -150rpx;
+  flex-grow: 0;
+}
+.gameProgressBarGrow {
+  height:64rpx;
+  background-image: url("https://s2.ax1x.com/2019/06/01/V3uKrd.png");
+  background-size: 3rpx 64rpx;
+  background-position: 0rpx 0rpx;
+  flex-grow: 1;
+}
+.gameProgressBarEnd {
+    width:37rpx;
+  height:64rpx;
+  background-image: url("https://s2.ax1x.com/2019/06/01/V3e1aV.png");
+  background-size: 568rpx 224rpx;
+  background-position: -100rpx -150rpx;
+  flex-grow: 0;
+}
+
+.addProgressButton {
+  position: absolute;
+  top: 0rpx;
+  right: 0rpx;
+  height: 120rpx;
+  width: 105rpx;
+  background-image: url("https://s2.ax1x.com/2019/06/01/V3ZPtU.png");
+  background-size: 1499rpx 1289rpx;
+  background-position: -1382rpx -202rpx;
+}
+
+/* 以下是矿区相关样式 */
+.miningArea {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  overflow: scroll;
+  flex-direction: column;
+}
+
+.mineRoad1 {
+  height: 235rpx;
+  display: flex;
+}
+
+.mineRoad2 {
+  height: 235rpx;
+  display: flex;
+}
+
+.mineCompleted {
+  position: relative;
+  margin-left: -100rpx;
+  height: 235rpx;
+  width: 655rpx;
+  background-image: url("https://s2.ax1x.com/2019/06/01/V3ZPtU.png");
+  background-size: 1499rpx 1289rpx;
+  background-position: -10rpx -10rpx;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.goldTramcar {
+  position: relative;
+  top: 15rpx;
+  height: 172rpx;
+  width: 125rpx;
+  background-image: url("https://s2.ax1x.com/2019/06/01/V3ZPtU.png");
+  background-size: 1499rpx 1289rpx;
+  background-position: -10rpx -1108rpx;
+}
+
+.goldMiner {
+  position: relative;
+  top: 15rpx;
+  height: 172rpx;
+  width: 107rpx;
+  background-image: url("https://s2.ax1x.com/2019/06/01/V3ZPtU.png");
+  background-size: 1499rpx 1289rpx;
+  background-position: -1382rpx -10rpx;
+}
+
+.goldMound {
+  position: relative;
+  top: 7rpx;
+  left: 5rpx;
+  height: 199rpx;
+  width: 229rpx;
+  background-image: url("https://s2.ax1x.com/2019/06/01/V3ZPtU.png");
+  background-size: 1499rpx 1289rpx;
+  background-position: -244rpx -605rpx;
+}
+
+.mineUnfinished {
+  height: 235rpx;
+  /* flex-shrink:0; */
+  width: 200rpx;
+  background-image: url("https://s2.ax1x.com/2019/06/01/V3ZPtU.png");
+  background-size: 1499rpx 1289rpx;
+  background-position: -10rpx -853rpx;
+}
+
+
+/* 以下是主要操作区相关样式 */
+
+.majorOperatingAreas {
+background:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+  height: 228rpx;
+  width: 750rpx;
+  position: absolute;
+  padding-bottom: 15rpx;
+  bottom: 0rpx;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.myFriendList {
+  position: relative;
+  left: 0rpx;
+  height: 165rpx;
+  width: 163rpx;
+  background-image: url("https://s2.ax1x.com/2019/06/01/V3ZPtU.png");
+  background-size: 1499rpx 1289rpx;
+  background-position: -862rpx -605rpx;
+}
+
+.myFriendButton {
+  position: absolute;
+  margin: 85rpx 11rpx 6rpx 7rpx;
+  height: 74rpx;
+  width: 145rpx;
+  background-image: url("https://s2.ax1x.com/2019/06/01/V3ZPtU.png");
+  background-size: 1499rpx 1289rpx;
+  background-position: -1154rpx -265rpx;
+}
+
+.myFriendTips {
+  margin: 8rpx 14rpx 106rpx 97rpx;
+  height: 51rpx;
+  width: 51rpx;
+  background-image: url("https://s2.ax1x.com/2019/06/01/V3ZPtU.png");
+  background-size: 1499rpx 1289rpx;
+  background-position: -1382rpx -800rpx;
+}
+
+.dailySign {
+  position: relative;
+  left: 0rpx;
+  height: 165rpx;
+  width: 163rpx;
+  background-image: url("https://s2.ax1x.com/2019/06/01/V3ZPtU.png");
+  background-size: 1499rpx 1289rpx;
+  background-position: -679rpx -605rpx;
+}
+
+.taskList {
+  position: relative;
+  left: 0rpx;
+  height: 163rpx;
+  width: 154rpx;
+  background-image: url("https://s2.ax1x.com/2019/06/01/V3ZPtU.png");
+  background-size: 1499rpx 1289rpx;
+  background-position: -1045rpx -605rpx;
+}
+
+.mainShareButton {
+  position: relative;
+  left: -10rpx;
+  height: 228rpx;
+  width: 214rpx;
+  
+  background-image: url("https://s2.ax1x.com/2019/06/01/V3ZPtU.png");
+  background-size: 1499rpx 1289rpx;
+  background-position: -10rpx -605rpx;
+}

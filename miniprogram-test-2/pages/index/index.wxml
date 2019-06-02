@@ -1,0 +1,52 @@
+<!--index.wxml-->
+<navbar showBackButton="{{false}}" page-name=""></navbar>
+<collectGoldCoin  id="collectGoldCoin"  coin-num="20"></collectGoldCoin>
+<view class="container" style="height:{{containerHeight}}rpx">
+  <view class="gameGuideBook"  catch:tap="comingSoon"></view>
+  <view class="gameAnnouncement"></view>
+  <!-- 以下是进度条区域 -->
+  <view class="gameProgressContent">
+    <view class="gameProgressBar">
+      <view class="barOutView"  style="width:{{barOutViewWidth}}rpx" bind:tap="addCoin">
+        <view class="gameProgressBarStart"></view>
+        <view class="gameProgressBarGrow"></view>
+        <view class="gameProgressBarEnd"></view>
+
+      </view>
+      
+    </view>
+    <view class="gamePrize"></view>
+    <view class="changePrizeButton"></view>
+    <navigator url="/pages/mineMarket/mineMarket"><view class="addProgressButton"></view></navigator>
+    <text class="getPrizeTips">点进度条会变长</text>
+  </view>
+  <!-- 以下是挖矿区域 -->
+  <view class="miningArea" style="height:{{containerHeight>1334?containerHeight/3:containerHeight/2.8}}rpx;top:{{containerHeight>1334?containerHeight/3:510}}rpx">
+    <view class="mineRoad1">
+      <view class="mineCompleted">
+        <view class="goldTramcar"></view>
+        <view class="goldMiner"></view>
+        <view class="goldMound"></view>
+      </view>
+      <view class="mineUnfinished"></view>
+    </view>
+    <view class="mineRoad2">
+      <view class="mineCompleted">
+        <view class="goldTramcar"></view>
+        <view class="goldMound"></view>
+      </view>
+      <view class="mineUnfinished"></view>
+    </view>
+  </view>
+  <!-- 以下是主要操作区域 -->
+  <view class="majorOperatingAreas">
+    <view class="myFriendList"  catch:tap="comingSoon">
+      <view class="myFriendButton"></view>
+      <view class="myFriendTips" ></view>
+    </view>
+    <view class="dailySign"  bind:tap="playCollectGoldCoinAnimat"></view>
+    <navigator url="/pages/mineMarket/mineMarket"><view class="taskList"></view></navigator>
+    <button class="mainShareButton"    open-type='share'></button>
+    <!-- <view class="mainShareButton"  catch:tap="comingSoon"></view> -->
+  </view>
+</view>
