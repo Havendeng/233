@@ -21,7 +21,7 @@ Page({
     return {
       title: '这是我邓衡锋写的第一个小程序',
       desc: '分享页面的内容',
-      path: '/pages/index/index' // 路径，传递参数到指定页面。
+      path: '/pages/index/index' // 路径，.传递参数到指定页面。
     };
 
   },
@@ -42,7 +42,7 @@ Page({
   },
   comingSoon: function () {
     wx.showToast({
-      title: '还在开发当中',
+      title: '还在开发当',
       icon: 'loading',
       duration: 1000
     });
