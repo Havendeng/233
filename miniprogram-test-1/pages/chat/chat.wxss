@@ -1,0 +1,47 @@
+.outView{
+  height: 500rpx;
+  width: 500rpx;
+  background: #563557;
+  display: flex;
+  justify-content:space-around;
+}
+.innerView{
+  height: 300rpx;
+  width: 300rpx;
+  background-color: #666557;
+}
+.outBox{
+  background-color: #456123;
+  height: 300rpx;
+  width: 750rpx;
+  display:flex;
+  flex-wrap:  wrap;
+  /* transform:scale(1,1); */
+  /* justify-content:flex-end; */
+  align-content: flex-start ;
+  transition: all .2s ease-in;
+  /* transition: width 2s; */
+  /* -webkit-transition:width 2s; */
+  /* flex-direction:  column-reverse;
+  overflow:  scroll; */
+}
+.innerBox{
+  border: 10rpx solid red;
+  box-sizing:border-box;
+  color: white;
+  /* vertical-align:middle; */
+  line-height: 80rpx;
+  text-align: center;
+  background-color: #789456;
+  height: 100rpx;
+  width: 300rpx;
+}
+
+.hoverView{
+  background-color: black;
+}
+.hoverViewOut{
+  background-color: pink;
+  /* transform:scale(1.5,1.5); */
+  width:500rpx;
+}

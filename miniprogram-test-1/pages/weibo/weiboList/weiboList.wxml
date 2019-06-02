@@ -1,0 +1,3 @@
+<view>这个是个人页面</view>
+<view wx:for="{{weibos}}" wx:key="*this">{{item}}</view>
+<button type="primary" bindtap="writeWeibo">写微博</button>

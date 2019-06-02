@@ -1,0 +1,3 @@
+<!--pages/test/test.wxml-->
+<view>这个是个人页面</view>
+<button type="primary" bindtap="writeWeibo">写微博</button>

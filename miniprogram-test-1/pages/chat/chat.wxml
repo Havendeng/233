@@ -1,0 +1,11 @@
+<!--pages/chat/chat.wxml-->
+<text>聊天内容</text>
+<view class="outView"  id="outView" bindtap="onClickOutView" hover-class="hoverViewOut" hover-start-time="50" hover-stay-time="100">
+  <view class="innerView" id="innerView" bindtap="onClickInnerView" hover-class="hoverView"></view>
+</view>
+<view class="outBox">
+  <view class="innerBox innerBox1">1</view>
+  <view class="innerBox innerBox2">2</view>
+  <view class="innerBox innerBox3">3</view>
+  <view class="innerBox innerBox4">4</view>
+</view>

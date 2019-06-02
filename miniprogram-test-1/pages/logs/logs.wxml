@@ -1,0 +1,5 @@
+<import src="../tpl/massage.wxml"/>
+<view>
+    <text class="log-item">这个是我的推荐</text>
+</view>
+<template is="massage" data='{{name:"推荐"}}'></template>

@@ -1,0 +1,6 @@
+<view >
+  <form bindsubmit="submintEvent">
+    <textarea name="content" placeholder="请输入内容"></textarea>
+    <button type="primary" form-type="submit">发送</button>
+  </form>
+</view>

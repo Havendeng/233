@@ -1,0 +1,35 @@
+<!--index.wxml-->
+<import src="../tpl/massage.wxml"/>
+<view >
+  <template is="massage" wx:for="{{massage}}" wx:key="name" data="{{...item}}" bind:tap="showSome"></template>
+  <view wx:for="{{massage}}" wx:key="name" bind:tap="showSome" data-id="{{item.id}}" data-name="{{item.name}}">{{item.content}}</view>
+    <text >{{username}}</text>
+    <text  wx:if="{{person.age > 18}}">可以进入网吧</text>
+    <text  wx:elif="{{person.age == 18}}">刚好可以进入网吧</text>
+    <text  wx:else >你不可以可以进入网吧</text>
+    <text >{{books[1]}}</text>
+    <block wx:if="{{weather == 'sunday'}}">
+      <text>我会选择长途旅行《》</text>
+      <text>我会选择长途旅行《》</text>
+    </block>
+    <block wx:elif="{{weather == 'cloudy'}}">
+      <text>我会待在家里</text>
+      <text>我会待在家里</text>
+    </block>
+    <block wx:else >
+      <view>我不知道要干嘛</view>
+      <view>啊啊啊</view>
+    </block>
+    <view wx:for="{{books}}" wx:for-index="idx" wx:key="*this">
+      {{item}}:{{idx}}
+    </view>
+    <view wx:for="{{books}}" wx:key="*this">
+      <switch>{{item}}</switch>
+    </view>
+    <button bindtap="update">更新</button>
+    <view wx:for="{{[1,2,3,4,5,6,7,8,9]}}" wx:for-item="row" class="row" wx:key="*this">
+      <view wx:for="{{[1,2,3,4,5,6,7,8,9]}}" wx:for-item="line" wx:if="{{line<=row}}" class="line" wx:key="*this">
+        {{line}}*{{row}}={{line*row}}
+      </view>
+    </view>
+</view>

@@ -1,0 +1,10 @@
+@import "../tpl/massage.wxss";
+.row{
+  display: flex;
+  justify-content:space-between;
+  overflow: scroll;
+}
+.line{
+  font-size: 20rpx;
+  margin-left: 20rpx;
+}

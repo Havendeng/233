@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/more/more",
+    "pages/chat/chat",
+    "pages/test/test",
+    "pages/weibo/weiboList/weiboList",
+    "pages/weibo/weibo/writeWeibo",
+    "pages/index/index",
+    "pages/logs/logs"
+
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "微信开发",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "default"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#E02E24",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "img/home.png",
+        "selectedIconPath": "img/home_selected.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "推荐",
+        "iconPath": "img/recommend.png",
+        "selectedIconPath": "img/recommend_selected.png"
+      },
+      {
+        "pagePath": "pages/more/more",
+        "text": "搜索",
+        "iconPath": "img/search.png",
+        "selectedIconPath": "img/search_selected.png"
+      },
+      {
+        "pagePath": "pages/chat/chat",
+        "text": "聊天",
+        "iconPath": "img/chat.png",
+        "selectedIconPath": "img/chat_selected.png"
+      },
+      {
+        "pagePath": "pages/test/test",
+        "text": "个人",
+        "iconPath": "img/personal.png",
+        "selectedIconPath": "img/personal_selected.png"
+      }
+    ]
+  },
+  "debug": false
+}

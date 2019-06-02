@@ -1,0 +1,15 @@
+<!--pages/more/more.wxml-->
+<text>{{massage}}</text>
+<scroll-view class="scroll-view" scroll-x="{{true}}" bindscrolltolower="toLower" bindscrolltoupper="toUper">
+  <view class="view1">我可以横向滚动</view>
+  <view class="view2">我可以横向滚动</view>
+  <view class="view3">我可以横向滚动</view>
+</scroll-view>
+<scroll-view class="scroll-view-y" scroll-y="{{true}}" scroll-into-view="v3" scroll-with-animation enable-back-to-top scroll-top="350" bindscrolltolower="toLower" bindscrolltoupper="toUper">
+  <view class="view1">我可以竖向滚动1</view>
+  <view class="view2">我可以竖向滚动2</view>
+  <view class="view3" id="v3">我可以竖向滚动3,默认</view>
+  <view class="view1">我可以竖向滚动4</view>
+  <view class="view2">我可以竖向滚动5</view>
+  <view class="view3">我可以竖向滚动6</view>
+</scroll-view>

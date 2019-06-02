@@ -1,0 +1,6 @@
+<template name="massage" >
+  <text style="color:red" class="massageStyle">
+    我是来自模板的内容，我现在显示在{{name}}
+  </text>
+  <text>我还可以能够多的东西{{content}}</text>
+</template>
