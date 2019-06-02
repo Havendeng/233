@@ -30,15 +30,11 @@ Component({
     playCollectGoldCoinAnimat: function () {
       // setTimeout(closeGoldCoinAnimat(), 3000);
       let that = this;
-      let animateViewScale = that.data.animateViewScale;
-      let goldCoinFall = that.data.goldCoinFall;
-      let moneyBagWiggle = that.data.moneyBagWiggle;
-      let coinNumShow = that.data.coinNumShow;
       that.setData({
-        animateViewScale: !animateViewScale,
-        goldCoinFall: !goldCoinFall,
-        moneyBagWiggle: !moneyBagWiggle,
-        coinNumShow: !coinNumShow,
+        animateViewScale: !that.data.animateViewScale,
+        goldCoinFall: !that.data.CoinFall,
+        moneyBagWiggle: !that.data.moneyBagWiggle,
+        coinNumShow: !that.data.coinNumShow,
       });
       setTimeout(
         function () {

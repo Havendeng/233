@@ -17,16 +17,16 @@ Component({
      navH:30
    },
   attached:function(){
-    // console.log(typeof(this.data.navH));
-    // var navH = this.data.navH;
     // 为什么这样不行？
-    // this.setData({
-    //     navH: app.globalData.navHeight
-    //   });
-      // 这样就可以？
+    // let that = this;
+    let navH = app.globalData.navHeigh
     this.setData({
-      navH: app.globalData.navHeigh
-    });
+      navH: navH
+      });
+      // 这样就可以？
+    // this.setData({
+    //   navH: app.globalData.navHeigh
+    // });
   },
 
   methods:{
