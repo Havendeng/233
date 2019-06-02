@@ -9,6 +9,7 @@ const app = getApp();
 
 Page({
   data: {
+    CoinFallSpeed: 1000,
     collectGoldCoin: null,
     barOutViewWidth: null,
     containerHeight: null,
@@ -32,6 +33,74 @@ Page({
       barOutViewWidth: barOutViewWidth
     });
   },
+  addCoinFallSpeed: function (e) {
+    clearTimeout(t1);
+    let that = this;
+    if (that.data.CoinFallSpeed > 200) {
+      that.setData({
+        CoinFallSpeed: that.data.CoinFallSpeed - 100
+      });
+      console.log(that.data.CoinFallSpeed + "1");
+       var t1 = setTimeout(() => {
+
+        that.setData({
+          CoinFallSpeed: 1000
+        });
+      }, 10000);
+    } else {
+      console.log(that.data.CoinFallSpeed + "2");
+      that.setData({
+        CoinFallSpeed: 200
+      });
+      var t1 = setTimeout(() => {
+
+        that.setData({
+          CoinFallSpeed: 1000
+        });
+      }, 10000);
+    }
+
+
+  },
+
+  // function startMove(obj, json, fnEnd) {
+  //   clearInterval(obj.timer);
+  //   obj.timer = setInterval(function () {
+  //     var bStop = true; //假设：所有值都已经到了
+
+  //     for (var attr in json) {
+  //       var cur = 0;
+
+  //       if (attr == 'opacity') {
+  //         cur = Math.round(parseFloat(getStyle(obj, attr)) * 100);
+  //       } else {
+  //         cur = parseInt(getStyle(obj, attr));
+  //       }
+
+  //       var speed = (json[attr] - cur) / 6;
+  //       speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+
+  //       if (cur != json[attr])
+  //         bStop = false;
+
+  //       if (attr == 'opacity') {
+  //         obj.style.filter = 'alpha(opacity:' + (cur + speed) + ')';
+  //         obj.style.opacity = (cur + speed) / 100;
+  //       } else {
+  //         obj.style[attr] = cur + speed + 'px';
+  //       }
+  //     }
+
+  //     if (bStop) {
+  //       clearInterval(obj.timer);
+
+  //       if (fnEnd) fnEnd();
+  //     }
+  //   }, 30);
+  // }
+
+
+
   addCoin: function () {
     console.log(this);
     let that = this;

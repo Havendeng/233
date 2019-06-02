@@ -144,15 +144,43 @@ button {
   justify-content: flex-end;
   align-items: center;
 }
-
-.goldTramcar {
+.fallCoinAnimate{
+  /* background-color: pink; */
   position: relative;
-  top: 15rpx;
+  height: 235rpx;
+  width: 125rpx;
+}
+.goldTramcar {
+  /* background-color:gray; */
+  position: relative;
+  top: 45rpx;
   height: 172rpx;
   width: 125rpx;
   background-image: url("https://s2.ax1x.com/2019/06/01/V3ZPtU.png");
   background-size: 1499rpx 1289rpx;
   background-position: -10rpx -1108rpx;
+}
+.fallCoin{
+    /* background-color: pink; */
+    height: 120rpx;
+    width: 120rpx;
+    transform: scale(0.8);
+    background-image: url(https://s2.ax1x.com/2019/05/30/VQnprt.png);
+    background-size: 473rpx 364rpx;
+    background-position: -352rpx -10rpx;  
+    position: absolute;  
+    left: 10rpx;
+    top: -10rpx;
+    animation: fallCoin  1000ms ease-in 0ms infinite ;
+}
+@keyframes fallCoin {
+    0% {
+        top: -75rpx;
+    }
+    100% {
+        top: 45rpx;
+    }
+
 }
 
 .goldMiner {
