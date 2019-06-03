@@ -6,7 +6,14 @@
   <view class="gameGuideBookPopup" hover-class="none" hover-stop-propagation="false">
     
   </view>
-  <view class="gameAnnouncement"></view>
+  <view class="gameAnnouncement">
+    <view class="textArea">
+      <view class="scrollText"  wx:for="{{InformTheContent}}" wx:key="id"
+      style='{{ orientation }}:{{ marqueeDistance }}rpx;font-size: {{scrollFontSize}}rpx;width:{{50}}rpx'>
+        {{item.content}}
+      </view>
+    </view>
+  </view>
   <!-- 以下是进度条区域 -->
   <view class="gameProgressContent">
     <view class="gameProgressBar">

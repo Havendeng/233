@@ -48,7 +48,25 @@ button {
   background-size: 1499rpx 1289rpx;
   background-position: -352rpx -405rpx;
 }
+.textArea{
+  /* background-color: #252; */
+  height: 37rpx;
+  width: 320rpx;
+  position: absolute;
+  left: 97rpx;
+  top: 33rpx;
+  overflow: hidden;
+  display:flex;
+  justify-content: space-between;
+  
+}
+.scrollText{
+  flex-shrink:0;
+  /* display: inline-flex; */
+  top: 0;
+  line-height: 37rpx;
 
+}
 .gameProgressContent {
   position: absolute;
   left: 102rpx;
