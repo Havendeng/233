@@ -9,7 +9,8 @@ const app = getApp();
 
 Page({
   data: {
-    CoinFallSpeed: 1000,
+    getPrizeTipsShow: true,
+    CoinFallSpeed: 2000,
     collectGoldCoin: null,
     barOutViewWidth: null,
     containerHeight: null,
@@ -34,33 +35,51 @@ Page({
     });
   },
   addCoinFallSpeed: function (e) {
-    clearTimeout(t1);
+    clearTimeout(t2);
+    console.log(t2);
     let that = this;
+    // 以下是为了让每次点击减少金币的下降时间，达到加速的目的
     if (that.data.CoinFallSpeed > 200) {
       that.setData({
-        CoinFallSpeed: that.data.CoinFallSpeed - 100
+        CoinFallSpeed: that.data.CoinFallSpeed - 500
       });
-      console.log(that.data.CoinFallSpeed + "1");
-       var t1 = setTimeout(() => {
-
-        that.setData({
-          CoinFallSpeed: 1000
-        });
-      }, 10000);
+      console.log(that.data.CoinFallSpeed + ":1");
+      // 当下降时间小于等于200时，让下降时间重置为200
     } else {
-      console.log(that.data.CoinFallSpeed + "2");
+      console.log(that.data.CoinFallSpeed + ":2");
       that.setData({
         CoinFallSpeed: 200
       });
-      var t1 = setTimeout(() => {
 
-        that.setData({
-          CoinFallSpeed: 1000
-        });
-      }, 10000);
     }
-
-
+    var t2 = setTimeout(() => {
+      var t3=setTimeout(function test() {
+        if (that.data.CoinFallSpeed < 1000) {
+          console.log(that.data.CoinFallSpeed + ":3");
+          setTimeout(test, 1000);
+          // clearInterval(e.t1);
+        } else {
+          return false
+        }
+        that.setData({
+          CoinFallSpeed: that.data.CoinFallSpeed + 50
+        });
+      }, 1000);
+    }, 10000);
+    // e.t2 = setTimeout(() => {
+    //   e.t1 = setInterval(() => {
+    //     if (that.data.CoinFallSpeed < 1000) {
+    //       console.log(that.data.CoinFallSpeed + ":3");
+    //       that.setData({
+    //         CoinFallSpeed: that.data.CoinFallSpeed + 50
+    //       });
+    //       // clearInterval(e.t1);
+    //     } else {
+    //        console.log(that.data.CoinFallSpeed + ":4");
+    //       clearInterval(e.t1);
+    //     }
+    //   }, 1000);
+    // }, 10000);
   },
 
   // function startMove(obj, json, fnEnd) {
@@ -102,10 +121,10 @@ Page({
 
 
   addCoin: function () {
-    console.log(this);
     let that = this;
     let barOutViewWidth = that.data.barOutViewWidth;
     that.setData({
+      getPrizeTipsShow: false,
       barOutViewWidth: barOutViewWidth + 20
     });
   },

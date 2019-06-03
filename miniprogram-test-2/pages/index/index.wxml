@@ -21,7 +21,7 @@
     <view class="gamePrize"></view>
     <view class="changePrizeButton"></view>
     <navigator url="/pages/mineMarket/mineMarket"><view class="addProgressButton"></view></navigator>
-    <text class="getPrizeTips">点进度条会变长</text>
+    <text class="getPrizeTips" wx:if="{{getPrizeTipsShow}}">点进度条会变长</text>
   </view>
   <!-- 以下是挖矿区域 -->
   <view class="miningArea" style="height:{{containerHeight>1334?containerHeight/3:containerHeight/2.8}}rpx;top:{{containerHeight>1334?containerHeight/3:510}}rpx">
