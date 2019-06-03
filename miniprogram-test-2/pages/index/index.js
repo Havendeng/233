@@ -10,7 +10,7 @@ const app = getApp();
 Page({
   data: {
     getPrizeTipsShow: true,
-    CoinFallSpeed: 2000,
+    CoinFallSpeed: 1000,
     collectGoldCoin: null,
     barOutViewWidth: null,
     containerHeight: null,
@@ -35,13 +35,14 @@ Page({
     });
   },
   addCoinFallSpeed: function (e) {
+    // clearInterval(t1);
+    console.log(t2 + "我是t2");
     clearTimeout(t2);
-    console.log(t2);
     let that = this;
     // 以下是为了让每次点击减少金币的下降时间，达到加速的目的
     if (that.data.CoinFallSpeed > 200) {
       that.setData({
-        CoinFallSpeed: that.data.CoinFallSpeed - 500
+        CoinFallSpeed: that.data.CoinFallSpeed - 100
       });
       console.log(that.data.CoinFallSpeed + ":1");
       // 当下降时间小于等于200时，让下降时间重置为200
@@ -50,24 +51,10 @@ Page({
       that.setData({
         CoinFallSpeed: 200
       });
-
-    }
-    var t2 = setTimeout(() => {
-      var t3=setTimeout(function test() {
-        if (that.data.CoinFallSpeed < 1000) {
-          console.log(that.data.CoinFallSpeed + ":3");
-          setTimeout(test, 1000);
-          // clearInterval(e.t1);
-        } else {
-          return false
-        }
-        that.setData({
-          CoinFallSpeed: that.data.CoinFallSpeed + 50
-        });
-      }, 1000);
-    }, 10000);
-    // e.t2 = setTimeout(() => {
-    //   e.t1 = setInterval(() => {
+    };
+    // var t1;
+    // var t2 = setTimeout(() => {
+    //   t1 = setInterval(() => {
     //     if (that.data.CoinFallSpeed < 1000) {
     //       console.log(that.data.CoinFallSpeed + ":3");
     //       that.setData({
@@ -75,13 +62,30 @@ Page({
     //       });
     //       // clearInterval(e.t1);
     //     } else {
-    //        console.log(that.data.CoinFallSpeed + ":4");
-    //       clearInterval(e.t1);
+    //       console.log(that.data.CoinFallSpeed + ":4");
+
+    //       clearInterval(t1);
+    //       return false
     //     }
     //   }, 1000);
+    //   console.log(t1 + "我是t1")
     // }, 10000);
-  },
-
+ 
+      var t2 = setTimeout(function() {
+        var t3=setTimeout(function test() {
+          if (that.data.CoinFallSpeed < 1000) {
+            console.log(that.data.CoinFallSpeed + ":3");
+            setTimeout(test, 1000);
+            // clearInterval(e.t1);
+          } else {
+            return false
+          }
+          that.setData({
+            CoinFallSpeed: that.data.CoinFallSpeed + 50
+          });
+        }, 1000);
+      }, 10000);
+ },
   // function startMove(obj, json, fnEnd) {
   //   clearInterval(obj.timer);
   //   obj.timer = setInterval(function () {
