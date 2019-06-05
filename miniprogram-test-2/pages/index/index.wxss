@@ -7,13 +7,10 @@
 }
 button::after {
   border: none;
-  background-color:transparent;
 }
 
 button {
-  background-color:transparent;
-  margin: 0;
-  padding: 0;
+
   border:none;
 }
 .button-hover {
@@ -61,6 +58,7 @@ button {
   
 }
 .scrollText{
+  /* width: 320rpx; */
   flex-shrink:0;
   /* display: inline-flex; */
   top: 0;
@@ -68,6 +66,7 @@ button {
 
 }
 .gameProgressContent {
+  /* background-color: #00f; */
   position: absolute;
   left: 102rpx;
   top: 306rpx;
@@ -118,7 +117,31 @@ button {
   background-position: -100rpx -150rpx;
   flex-grow: 0;
 }
-
+.avatarAndPrize{
+  font-size: 30rpx;
+  position: absolute;
+  background-color: #fff;
+  top: 13rpx;
+  left: 13rpx;
+  height: 85rpx;
+  width: 85rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  padding: 0;
+  /* display: flex; */
+  
+}
+.default{
+  position: absolute;
+}
+.avatarView{
+    height: 85rpx;
+    width: 85rpx;
+}
+.gamePrize {
+    height: 85rpx;
+    width: 85rpx;
+}
 .addProgressButton {
   position: absolute;
   top: 0rpx;
@@ -293,6 +316,7 @@ background:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
   background-image: url("https://s2.ax1x.com/2019/06/01/V3ZPtU.png");
   background-size: 1499rpx 1289rpx;
   background-position: -1045rpx -605rpx;
+
 }
 
 .mainShareButton {
@@ -304,4 +328,13 @@ background:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
   background-image: url("https://s2.ax1x.com/2019/06/01/V3ZPtU.png");
   background-size: 1499rpx 1289rpx;
   background-position: -10rpx -605rpx;
+      background-color:transparent;
+      margin: 0;
+      padding: 0;
+      border:none;
+
+}
+.mainShareButton-hover {
+  transform: scale(0.9);
+  transition: all 0.3s;
 }

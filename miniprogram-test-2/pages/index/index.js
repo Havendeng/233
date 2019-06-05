@@ -14,11 +14,11 @@ Page({
       // {id:2,content:"我根本不"}
       {
         id: 1,
-        content: "你好我是第一条通知的内容"
+        content: "点进度条,狂点矿车"
       },
       {
-        id: 2,
-        content: "我根本不想知道你在说什么"
+        // id: 2,
+        // content: "我根本不想知道你在说什么"
       }
     ],
 
@@ -32,6 +32,7 @@ Page({
     fallCoinTop: -95,
     // CoinFallSpeed是金币下落的步进
     coinFallSpeed: 2,
+    // 金币下落的加速度
     coinFallAcceleratedSpeed: 1,
     collectGoldCoin: null,
     barOutViewWidth: null,
@@ -49,12 +50,21 @@ Page({
     };
 
   },
+    getUserInfo: function (e) {
+      console.log(e);
+      app.globalData.userInfo = e.detail.userInfo;
+      this.setData({
+        userInfo: e.detail.userInfo,
+        hasUserInfo: true
+      });
+    },
   onLoad: function () {
     let barOutViewWidth = parseInt((app.globalData.ownsCoinNum / app.globalData.coinTotalNum) * 490);
     this.setData({
       containerHeight: app.globalData.containerHeight,
       barOutViewWidth: barOutViewWidth
     });
+    // getUserInfo();
     // 此处setInterval是制作金币下落的动画
     setInterval(() => {
       if (45 > this.data.fallCoinTop && this.data.fallCoinTop >= -95) {
@@ -63,14 +73,13 @@ Page({
           coinFallAcceleratedSpeed: this.data.coinFallAcceleratedSpeed + 0.1,
         });
         
-        console.log(this.data.fallCoinTop)
+        // console.log(this.data.fallCoinTop);
       } else {
         this.setData({
           fallCoinTop: -95,
           coinFallAcceleratedSpeed: 0
         });
-        
-      };
+      }
     }, 30);
   },
 // addCoinFallSpeed是通过点击增加金币下落速度的方法
@@ -93,7 +102,7 @@ Page({
           if (that.data.coinFallSpeed > 2) {
             setTimeout(test, 1000);
           } else {
-            return false
+            return false;
           }
           that.setData({
             coinFallSpeed: that.data.coinFallSpeed - 1
@@ -128,12 +137,5 @@ Page({
 
   },
 
-  getUserInfo: function (e) {
-    console.log(e);
-    app.globalData.userInfo = e.detail.userInfo;
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    });
-  }
+
 });
