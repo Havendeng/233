@@ -35,7 +35,7 @@
     <view class="mineRoad1">
       <view class="mineCompleted">
         <view class="fallCoinAnimate">
-          <view class="fallCoin" style="animation-duration:{{CoinFallSpeed}}ms"></view>
+          <view class="fallCoin" style="top:{{fallCoinTop}}rpx"></view>
           <view class="goldTramcar" catch:tap="addCoinFallSpeed"></view>
         </view>
         <view class="goldMiner"></view>

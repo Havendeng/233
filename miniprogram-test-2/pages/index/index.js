@@ -9,17 +9,30 @@ const app = getApp();
 
 Page({
   data: {
-    InformTheContent:[
+    InformTheContent: [
       // {id:1,content:"你好我是"},
       // {id:2,content:"我根本不"}
-      {id:1,content:"你好我是第一条通知的内容"},
-      {id:2,content:"我根本不想知道你在说什么"}
+      {
+        id: 1,
+        content: "你好我是第一条通知的内容"
+      },
+      {
+        id: 2,
+        content: "我根本不想知道你在说什么"
+      }
     ],
-    orientation:"left",
-    marqueeDistance:0,
-    scrollFontSize:24,
+
+    orientation: "left",
+    marqueeDistance: 0,
+    scrollFontSize: 24,
     getPrizeTipsShow: true,
-    CoinFallSpeed: 1000,
+    // 在此定义一个全局的timer，用于金币下落一段时间后减速
+    timer: null,
+    // fallCoinTop是金币下落的初始高
+    fallCoinTop: -95,
+    // CoinFallSpeed是金币下落的步进
+    CoinFallSpeed: 4,
+    n:1,
     collectGoldCoin: null,
     barOutViewWidth: null,
     containerHeight: null,
@@ -42,60 +55,54 @@ Page({
       containerHeight: app.globalData.containerHeight,
       barOutViewWidth: barOutViewWidth
     });
-
+    // 此处setInterval是制作金币下落的动画
+    setInterval(() => {
+      if (45 > this.data.fallCoinTop && this.data.fallCoinTop >= -95) {
+        this.setData({
+          fallCoinTop: this.data.fallCoinTop + Math.ceil(this.data.CoinFallSpeed * this.data.n),
+          n: this.data.n + 0.1,
+        });
+        
+        console.log(this.data.fallCoinTop)
+      } else {
+        this.setData({
+          fallCoinTop: -95,
+          n:0
+        });
+        
+      };
+    }, 30);
   },
-  addCoinFallSpeed: function (e) {
-    // clearInterval(t1);
-    console.log(t2 + "我是t2");
-    clearTimeout(t2);
+// addCoinFallSpeed是通过点击增加金币下落速度的方法
+  addCoinFallSpeed: function () {
     let that = this;
-    // 以下是为了让每次点击减少金币的下降时间，达到加速的目的
-    if (that.data.CoinFallSpeed > 200) {
+    clearTimeout(that.data.timer);
+    if (that.data.CoinFallSpeed <= 10) {
       that.setData({
-        CoinFallSpeed: that.data.CoinFallSpeed - 100
+        CoinFallSpeed: that.data.CoinFallSpeed + 1
       });
-      console.log(that.data.CoinFallSpeed + ":1");
-      // 当下降时间小于等于200时，让下降时间重置为200
     } else {
-      console.log(that.data.CoinFallSpeed + ":2");
       that.setData({
-        CoinFallSpeed: 200
+        CoinFallSpeed: 10
       });
-    };
-    // var t1;
-    // var t2 = setTimeout(() => {
-    //   t1 = setInterval(() => {
-    //     if (that.data.CoinFallSpeed < 1000) {
-    //       console.log(that.data.CoinFallSpeed + ":3");
-    //       that.setData({
-    //         CoinFallSpeed: that.data.CoinFallSpeed + 50
-    //       });
-    //       // clearInterval(e.t1);
-    //     } else {
-    //       console.log(that.data.CoinFallSpeed + ":4");
-
-    //       clearInterval(t1);
-    //       return false
-    //     }
-    //   }, 1000);
-    //   console.log(t1 + "我是t1")
-    // }, 10000);
- 
-      var t2 = setTimeout(function() {
-        var t3=setTimeout(function test() {
-          if (that.data.CoinFallSpeed < 1000) {
-            console.log(that.data.CoinFallSpeed + ":3");
+    }
+    that.setData({
+      // timer: setTimeout；timer是个全局变量此处是为其赋值
+      timer: setTimeout(() => {
+        setTimeout(function test() {
+          if (that.data.CoinFallSpeed > 4) {
             setTimeout(test, 1000);
-            // clearInterval(e.t1);
           } else {
             return false
           }
           that.setData({
-            CoinFallSpeed: that.data.CoinFallSpeed + 50
+            CoinFallSpeed: that.data.CoinFallSpeed - 1
           });
         }, 1000);
-      }, 10000);
- },
+      }, 10000)
+    });
+  },
+
 
   addCoin: function () {
     let that = this;
