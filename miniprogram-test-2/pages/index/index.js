@@ -31,8 +31,8 @@ Page({
     // fallCoinTop是金币下落的初始高
     fallCoinTop: -95,
     // CoinFallSpeed是金币下落的步进
-    CoinFallSpeed: 4,
-    n:1,
+    coinFallSpeed: 2,
+    coinFallAcceleratedSpeed: 1,
     collectGoldCoin: null,
     barOutViewWidth: null,
     containerHeight: null,
@@ -59,15 +59,15 @@ Page({
     setInterval(() => {
       if (45 > this.data.fallCoinTop && this.data.fallCoinTop >= -95) {
         this.setData({
-          fallCoinTop: this.data.fallCoinTop + Math.ceil(this.data.CoinFallSpeed * this.data.n),
-          n: this.data.n + 0.1,
+          fallCoinTop: this.data.fallCoinTop + Math.ceil(this.data.coinFallSpeed * this.data.coinFallAcceleratedSpeed),
+          coinFallAcceleratedSpeed: this.data.coinFallAcceleratedSpeed + 0.1,
         });
         
         console.log(this.data.fallCoinTop)
       } else {
         this.setData({
           fallCoinTop: -95,
-          n:0
+          coinFallAcceleratedSpeed: 0
         });
         
       };
@@ -77,26 +77,26 @@ Page({
   addCoinFallSpeed: function () {
     let that = this;
     clearTimeout(that.data.timer);
-    if (that.data.CoinFallSpeed <= 10) {
+    if (that.data.coinFallSpeed <= 20) {
       that.setData({
-        CoinFallSpeed: that.data.CoinFallSpeed + 1
+        coinFallSpeed: that.data.coinFallSpeed + 1
       });
     } else {
       that.setData({
-        CoinFallSpeed: 10
+        coinFallSpeed: 20
       });
     }
     that.setData({
       // timer: setTimeout；timer是个全局变量此处是为其赋值
       timer: setTimeout(() => {
         setTimeout(function test() {
-          if (that.data.CoinFallSpeed > 4) {
+          if (that.data.coinFallSpeed > 2) {
             setTimeout(test, 1000);
           } else {
             return false
           }
           that.setData({
-            CoinFallSpeed: that.data.CoinFallSpeed - 1
+            coinFallSpeed: that.data.coinFallSpeed - 1
           });
         }, 1000);
       }, 10000)
