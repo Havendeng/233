@@ -68,7 +68,7 @@
       <view class="myFriendTips"></view>
     </view>
     <view class="dailySign" bind:tap="playCollectGoldCoinAnimat"></view>
-    <navigator url="/pages/mineMarket/mineMarket">
+    <navigator hover-class="none" url="/pages/mineMarket/mineMarket">
       <view class="taskList"></view>
     </navigator>
     <button class="mainShareButton" open-type='share'></button>

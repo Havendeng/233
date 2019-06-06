@@ -8,6 +8,7 @@
 const app = getApp();
 Page({
   data: {
+    // 此数组是模仿多条通知滚动的内容
     informTheContent: [
       {id: 1,content: "点进度条,狂点矿车"},
       {id: 2,content: "我根本不想知道你在说什么"},
@@ -37,9 +38,10 @@ Page({
     coinFallSpeed: 2,
     // 金币下落的加速度
     coinFallAcceleratedSpeed: 1,
-    scrollTextWidth: null,
+    scrollTextWidth: 0,
     collectGoldCoin: null,
-    barOutViewWidth: null,
+    // 此处是进度条中间可伸缩那段的值
+    barOutViewWidth: 0,
     containerHeight: null,
     userInfo: {},
     hasUserInfo: false,
@@ -53,7 +55,7 @@ Page({
       path: '/pages/index/index' // 路径，.传递参数到指定页面。
     };
   },
-
+// 获取用户信息并赋給全局变量
   getUserInfo: function (e) {
     console.log(e);
     app.globalData.userInfo = e.detail.userInfo;
@@ -62,13 +64,28 @@ Page({
       hasUserInfo: true
     });
   },
-  onLoad: function () {
+  onLoad: function (options) {
+    if (app.globalData.userInfo) {
+      this.setData({
+        userInfo:app.globalData.userInfo,
+        hasUserInfo:true
+      });
+    } else if(this.data.canIUse){
+      //由于getUserInfo是网络请求，可能会在onload之后才返回，为了防止这种情况，加入回调函数
+      app.userInfoReadyCallback=res=>{
+        this.setData({
+          userInfo: app.globalData.userInfo,
+          hasUserInfo: true
+        })
+      }
+    }
+    // 此处是获取用户金币数后展示在进度条上进行标示，进度条分三段，中间可伸缩
     let barOutViewWidth = parseInt((app.globalData.ownsCoinNum / app.globalData.coinTotalNum) * 490);
     this.setData({
       containerHeight: app.globalData.containerHeight,
       barOutViewWidth: barOutViewWidth
     });
-    // getUserInfo();
+
     // 此处setInterval是制作金币下落的动画
     setInterval(() => {
       if (45 > this.data.fallCoinTop && this.data.fallCoinTop >= -95) {
@@ -76,8 +93,6 @@ Page({
           fallCoinTop: this.data.fallCoinTop + Math.ceil(this.data.coinFallSpeed * this.data.coinFallAcceleratedSpeed),
           coinFallAcceleratedSpeed: this.data.coinFallAcceleratedSpeed + 0.1,
         });
-
-        // console.log(this.data.fallCoinTop);
       } else {
         this.setData({
           fallCoinTop: -95,
@@ -88,7 +103,6 @@ Page({
     // 以下是为了计算文字跑马灯所在是view 的长度
     let widthCount = 0;
     for (let i = 0; i < this.data.informTheContent.length; i++) {
-
       widthCount = (this.data.informTheContent[i].content.length * this.data.scrollFontSize) + widthCount + 50;
       console.log(widthCount);
     }
@@ -105,6 +119,7 @@ Page({
         
       } else {
         this.setData({
+          // 320是让滚动文字刚好不出现在第一屏的值
           marqueeDistance: 320,
         });
       }
@@ -128,11 +143,13 @@ Page({
       timer: setTimeout(() => {
         setTimeout(function test() {
           if (that.data.coinFallSpeed > 2) {
+            // 只要符合条件，就在一定时间后调用自身
             setTimeout(test, 1000);
           } else {
             return false;
           }
           that.setData({
+            // 这里才是放真正执行的语句，且不要放在if（）else语句里
             coinFallSpeed: that.data.coinFallSpeed - 1
           });
         }, 1000);
@@ -140,7 +157,7 @@ Page({
     });
   },
 
-
+// 此处是每次操作获得的金币在进度条上进行表现
   addCoin: function () {
     let that = this;
     let barOutViewWidth = that.data.barOutViewWidth;
@@ -149,9 +166,10 @@ Page({
       barOutViewWidth: barOutViewWidth + 20
     });
   },
+  //还未完成开发的模块显示“开发中”的toast
   comingSoon: function () {
     wx.showToast({
-      title: '还在开发当',
+      title: '还在开发',
       icon: 'loading',
       duration: 1000
     });
@@ -164,6 +182,4 @@ Page({
   onShow: function () {
 
   },
-
-
 });
