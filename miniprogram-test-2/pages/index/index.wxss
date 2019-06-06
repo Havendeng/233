@@ -55,6 +55,7 @@ button {
   overflow: hidden;
 }
 .outScrollText{
+  color: #e4834c;
   position: relative;
   left: 0rpx;
   display:flex;

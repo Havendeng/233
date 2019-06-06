@@ -95,9 +95,9 @@ Page({
     this.setData({
       scrollTextWidth: widthCount,
     });
-
+// 此处setInterval是制作文字跑马灯动画
     setInterval(() => {
-      console.log(this.data.marqueeDistance);
+      // console.log(this.data.marqueeDistance);
       if (-(this.data.marqueeDistance) < this.data.scrollTextWidth) {
         this.setData({
           marqueeDistance: this.data.marqueeDistance - 13,
