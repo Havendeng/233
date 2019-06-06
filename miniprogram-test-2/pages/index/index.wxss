@@ -53,14 +53,17 @@ button {
   left: 97rpx;
   top: 33rpx;
   overflow: hidden;
+}
+.outScrollText{
+  position: relative;
+  left: 0rpx;
   display:flex;
   justify-content: space-between;
-  
+  /* animation: scrollTextAnimate 10000ms linear 0ms infinite; */
 }
+
 .scrollText{
-  /* width: 320rpx; */
-  flex-shrink:0;
-  /* display: inline-flex; */
+  /* background-color: #da5; */
   top: 0;
   line-height: 37rpx;
 
@@ -93,7 +96,9 @@ button {
   position: absolute;
   left:51rpx;
   top:32rpx;
+  
 }
+
 .gameProgressBarStart{
     width:70rpx;
   height:64rpx;
@@ -214,15 +219,7 @@ button {
     top: -75rpx;
     /* animation: fallCoin  1000ms ease-in 0ms infinite ; */
 }
-/* @keyframes fallCoin {
-    0% {
-        top: -75rpx;
-    }
-    100% {
-        top: 45rpx;
-    }
 
-} */
 
 .goldMiner {
   position: relative;

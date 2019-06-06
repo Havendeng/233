@@ -8,13 +8,14 @@
   </view>
   <view class="gameAnnouncement">
     <view class="textArea">
-      <view class="scrollText" wx:for="{{InformTheContent}}" wx:key="id"
-        style='{{ orientation }}:{{ marqueeDistance }}rpx;font-size: {{scrollFontSize}}rpx;width:{{320}}rpx'>
-        {{item.content}}
+      <view class="outScrollText" style="{{ orientation }}:{{ marqueeDistance }}rpx;width:{{scrollTextWidth}}rpx">
+        <view class="scrollText" wx:for="{{informTheContent}}" wx:key="id" style='font-size: {{scrollFontSize}}rpx'>
+          {{item.content}}
+        </view>
       </view>
     </view>
   </view>
-<!-- <button wx:if="{{!hasUserInfo&&canIUse}}" class="default" open-type="getUserInfo" bindgetuserinfo="getUserInfo">获取头像昵称</button> -->
+  <!-- <button wx:if="{{!hasUserInfo&&canIUse}}" class="default" open-type="getUserInfo" bindgetuserinfo="getUserInfo">获取头像昵称</button> -->
   <!-- 以下是进度条区域 -->
   <view class="gameProgressContent">
     <view class="gameProgressBar">
@@ -26,7 +27,8 @@
       </view>
     </view>
 
-    <button class="avatarAndPrize"  open-type="getUserInfo" bindgetuserinfo="getUserInfo"><text style="word-wrap : word-wrap;" wx:if="{{!hasUserInfo}}">点我</text>
+    <button class="avatarAndPrize" open-type="getUserInfo" bindgetuserinfo="getUserInfo"><text
+        style="word-wrap : word-wrap;" wx:if="{{!hasUserInfo}}">点我</text>
       <image class="avatarView" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
       <image class="gamePrize"></image>
     </button>
